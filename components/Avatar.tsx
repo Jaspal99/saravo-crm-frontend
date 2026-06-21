@@ -27,9 +27,7 @@ export default function Avatar({
       style={style}
       className={`rounded-full bg-gray-400 flex items-center justify-center text-white font-medium ring-1 ring-gray-200 shadow-sm ${className}`}
     >
-      <span className="text-sm">
-        {alt?.[0]?.toUpperCase() ?? "U"}
-      </span>
+      <span className="text-sm">{alt?.[0]?.toUpperCase() ?? "U"}</span>
     </div>
   );
 }
