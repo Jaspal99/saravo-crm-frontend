@@ -47,7 +47,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${variantClass(variant)} ${sizeClass(size)} rounded ${className}`}
+  className={`inline-flex items-center justify-center ${variantClass(variant)} ${sizeClass(size)} rounded-md font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 ${className}`}
     >
       {children}
     </button>

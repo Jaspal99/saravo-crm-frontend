@@ -27,7 +27,7 @@ export default function Container({
   max = "xl",
 }: ContainerProps) {
   return (
-    <div className={`mx-auto px-4 w-full ${maxClass(max)} ${className}`}>
+    <div className={`mx-auto px-6 py-6 w-full ${maxClass(max)} ${className}`}>
       {children}
     </div>
   );

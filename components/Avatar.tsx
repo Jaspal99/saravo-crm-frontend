@@ -20,14 +20,14 @@ export default function Avatar({
       src={src}
       alt={alt}
       style={style}
-      className={`rounded-full object-cover ${className}`}
+      className={`rounded-full object-cover ring-1 ring-gray-200 shadow-sm ${className}`}
     />
   ) : (
     <div
       style={style}
-      className={`rounded-full bg-gray-300 flex items-center justify-center ${className}`}
+      className={`rounded-full bg-gray-400 flex items-center justify-center text-white font-medium ring-1 ring-gray-200 shadow-sm ${className}`}
     >
-      <span className="text-sm text-white">
+      <span className="text-sm">
         {alt?.[0]?.toUpperCase() ?? "U"}
       </span>
     </div>

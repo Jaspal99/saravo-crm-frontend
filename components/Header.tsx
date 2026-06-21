@@ -8,8 +8,8 @@ export type HeaderProps = {
 
 export default function Header({ children, className = "" }: HeaderProps) {
   return (
-    <header className={`w-full bg-white border-b py-3 ${className}`}>
-      <div className="mx-auto px-4 max-w-7xl">{children}</div>
+    <header className={`w-full bg-white border-b py-3 shadow-sm ${className}`}>
+      <div className="mx-auto px-6 max-w-7xl">{children}</div>
     </header>
   );
 }

@@ -18,11 +18,15 @@ export default function PageLayout({
   className = "",
 }: PageLayoutProps) {
   return (
-    <div className={`min-h-screen flex flex-col ${className}`}>
+    <div className={`min-h-screen flex flex-col bg-gray-50 text-gray-900 ${className}`}>
       {header}
       <div className="flex flex-1">
-        {sidebar && <Sidebar>{sidebar}</Sidebar>}
-        <main className="flex-1 p-4">{children}</main>
+        {sidebar && (
+          <div className="hidden md:block">
+            <Sidebar>{sidebar}</Sidebar>
+          </div>
+        )}
+        <main className="flex-1 p-6">{children}</main>
       </div>
       {footer}
     </div>
