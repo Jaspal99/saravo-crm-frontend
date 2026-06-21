@@ -1,36 +1,34 @@
-'use client'
+"use client";
 import { useTodos } from "@/hooks/useTodos";
 import { PageLayout, Container, Button, Card } from "../../components";
 
 export default function Page() {
-
-  const {data:todos} = useTodos()
-console.log("todoss",todos);
+  const { data: todos, isLoading } = useTodos();
+  console.log("todoss", todos);
 
   return (
     <PageLayout>
       <Container>
-        <h1 className="text-2xl font-semibold mb-4">
-          Todos
-        </h1>
+        <h1 className="text-2xl font-semibold mb-4">Todos</h1>
         <div className="grid grid-cols-2 gap-4">
-          <Card title={<span className="font-medium">Overview</span>}>
-            <p className="text-sm text-gray-700">
-              This area shows your most important stats and quick actions.
-            </p>
-            <div className="mt-3 flex gap-2">
-              <Button>New Contact</Button>
-              <Button variant="secondary">Import</Button>
-            </div>
-          </Card>
+          {isLoading ? (
+            <h1>Loading...</h1>
+          ) : todos?.length ? (
 
-          <Card title={<span className="font-medium">Recent Activity</span>}>
-            <ul className="text-sm text-gray-700">
-              <li>Call with Acme Corp — 2h ago</li>
-              <li>Signed contract — 1d ago</li>
-              <li>Imported leads — 3d ago</li>
-            </ul>
-          </Card>
+            todos.map(todo => 
+              <Card title={<span className="font-medium">{todo.title}</span>}>
+              <p className="text-sm text-gray-700">
+                {todo.description}
+              </p>
+              <div className="mt-3 flex gap-2">
+                {todo.completed ? <p>done</p>:<p>pending</p>}
+                <p>{todo.created_at}</p>
+              </div>
+            </Card>
+
+            )
+            
+          ) : null}
         </div>
       </Container>
     </PageLayout>
