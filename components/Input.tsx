@@ -7,7 +7,12 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
 };
 
-export default function Input({ label, error, className = "", ...rest }: InputProps) {
+export default function Input({
+  label,
+  error,
+  className = "",
+  ...rest
+}: InputProps) {
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
       {label && <label className="text-sm font-medium">{label}</label>}

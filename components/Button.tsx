@@ -11,7 +11,7 @@ export type ButtonProps = {
   type?: "button" | "submit" | "reset";
 };
 
-const sizeClass = (s: ButtonProps['size']) => {
+const sizeClass = (s: ButtonProps["size"]) => {
   switch (s) {
     case "sm":
       return "px-2 py-1 text-sm";
@@ -22,7 +22,7 @@ const sizeClass = (s: ButtonProps['size']) => {
   }
 };
 
-const variantClass = (v: ButtonProps['variant']) => {
+const variantClass = (v: ButtonProps["variant"]) => {
   switch (v) {
     case "secondary":
       return "bg-gray-200 text-gray-900";

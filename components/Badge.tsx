@@ -6,7 +6,7 @@ export type BadgeProps = {
   className?: string;
 };
 
-const colorClass = (c: BadgeProps['color']) => {
+const colorClass = (c: BadgeProps["color"]) => {
   switch (c) {
     case "success":
       return "bg-green-100 text-green-800";
@@ -19,6 +19,16 @@ const colorClass = (c: BadgeProps['color']) => {
   }
 };
 
-export default function Badge({ children, color = "default", className = "" }: BadgeProps) {
-  return <span className={`text-xs px-2 py-0.5 rounded ${colorClass(color)} ${className}`}>{children}</span>;
+export default function Badge({
+  children,
+  color = "default",
+  className = "",
+}: BadgeProps) {
+  return (
+    <span
+      className={`text-xs px-2 py-0.5 rounded ${colorClass(color)} ${className}`}
+    >
+      {children}
+    </span>
+  );
 }

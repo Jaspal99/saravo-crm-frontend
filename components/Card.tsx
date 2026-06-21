@@ -7,7 +7,12 @@ export type CardProps = {
   footer?: React.ReactNode;
 };
 
-export default function Card({ children, className = "", title, footer }: CardProps) {
+export default function Card({
+  children,
+  className = "",
+  title,
+  footer,
+}: CardProps) {
   return (
     <div className={`border rounded bg-white p-4 ${className}`}>
       {title && <div className="font-semibold mb-2">{title}</div>}
