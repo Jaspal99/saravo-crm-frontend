@@ -1,6 +1,12 @@
+'use client'
+import { useTodos } from "@/hooks/useTodos";
 import { PageLayout, Container, Button, Card } from "../../components";
 
 export default function Page() {
+
+  const {data:todos} = useTodos()
+console.log("todoss",todos);
+
   return (
     <PageLayout>
       <Container>
